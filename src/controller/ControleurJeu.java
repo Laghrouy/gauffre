@@ -42,6 +42,7 @@ public class ControleurJeu {
         vue.onSauvegarder(e -> sauvegarder());
         vue.onCharger(e -> charger());
         vue.onQuitter(e -> System.exit(0));
+        vue.onAnnulerCoup(e -> annulerCoup());
 
         // Enregistrer les listeners de la grille
         attacherEcouteursGrille(vue.getVueGrille());
@@ -189,4 +190,21 @@ public class ControleurJeu {
         vue.dispose();
         Lanceur.chargerPartie(null);
     }
+
+    private void annulerCoup() {
+    if (modele.annulerDernierCoup()) {
+        if (modele.joueurActuel == 1) {
+            if (modele.getTypeJoueur(1) == ModeleJeu.TypeJoueur.IA_ALEATOIRE || modele.getTypeJoueur(1) == ModeleJeu.TypeJoueur.IA_HEURISTIQUE || modele.getTypeJoueur(1) == ModeleJeu.TypeJoueur.IA_MINIMAX){
+                planifierTourIA(); // Si IA a joué avant et doit rejouer
+            }
+        }
+        if (modele.joueurActuel == 2) {
+            if (modele.getTypeJoueur(2) == ModeleJeu.TypeJoueur.IA_ALEATOIRE || modele.getTypeJoueur(2) == ModeleJeu.TypeJoueur.IA_HEURISTIQUE || modele.getTypeJoueur(2) == ModeleJeu.TypeJoueur.IA_MINIMAX){
+                planifierTourIA(); // Si IA a joué avant et doit rejouer
+            }
+        }
+    } else {
+        vue.afficherErreur("Aucun coup à annuler !");
+    }
+}
 }

@@ -30,6 +30,8 @@ public class VuePrincipale extends JFrame {
     private final JButton btnSauvegarder;
     private final JButton btnCharger;
     private final JButton btnQuitter;
+    private final JButton btnHistorique;
+
 
     // ─── Éléments du menu ────────────────────────────────────────────────────
     private final JMenuItem menuNouvelle;
@@ -59,6 +61,7 @@ public class VuePrincipale extends JFrame {
         btnSauvegarder = creerBouton("Sauvegarder",     Icones.sauvegarder(18));
         btnCharger    = creerBouton("Charger",          Icones.dossier(18));
         btnQuitter    = creerBouton("Quitter",          Icones.sortie(18));
+        btnHistorique = creerBouton("Annuler le coup", Icones.dossier(18));
         btnQuitter.setBackground(new Color(150, 40, 40));
 
         // ── Items de menu (avec icônes SVG) ─────────────────────────────────
@@ -151,6 +154,7 @@ public class VuePrincipale extends JFrame {
         panel.add(btnSauvegarder);
         panel.add(btnCharger);
         panel.add(btnQuitter);
+        panel.add(btnHistorique);
         return panel;
     }
 
@@ -231,6 +235,9 @@ public class VuePrincipale extends JFrame {
         menuQuitter.addActionListener(l);
     }
 
+    public void onAnnulerCoup(ActionListener l) {
+        btnHistorique.addActionListener(l);
+    }
     // ─── Accès aux sous-composants ────────────────────────────────────────────
 
     public VueGrille getVueGrille() { return vueGrille; }

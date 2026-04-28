@@ -64,7 +64,7 @@ public class Lanceur {
     }
 
     // ── Ouvre un sélecteur de fichier et charge une partie ────────────────────
-    public static void chargerPartie(JFrame parent) {
+    public static void chargerPartie (JFrame parent) {
         JFileChooser fc = new JFileChooser();
         fc.setDialogTitle("Charger une partie");
         if (fc.showOpenDialog(parent) != JFileChooser.APPROVE_OPTION) {
@@ -84,5 +84,17 @@ public class Lanceur {
                 "Erreur", JOptionPane.ERROR_MESSAGE);
             afficherMenu();
         }
+    }
+
+    public static void chargerPartieModele(ModeleJeu modele) {
+        if (modele == null) {
+            afficherMenu();
+            return;
+        }
+
+        VueGrille grille = new VueGrille(modele);
+        VuePrincipale vue = new VuePrincipale(modele, grille);
+        new ControleurJeu(modele, vue);
+        vue.setVisible(true);
     }
 }

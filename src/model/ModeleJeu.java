@@ -24,12 +24,14 @@ public class ModeleJeu {
     private boolean[][] mangee;   // true = case supprimée
 
     // ─── État de la partie ───────────────────────────────────────────────────
-    private int joueurActuel;     // 1 ou 2
+    public int joueurActuel;     // 1 ou 2
     private int gagnant;          // 0 = pas encore, 1 ou 2 = gagnant
+    public int nbCouptJoue;
     private EtatPartie etat;
 
     // ─── Historique des coups ────────────────────────────────────────────────
     private final List<Coup> historique;
+    public List<boolean[][]> historiqueEtat;
 
     // ─── Observateurs (pattern Observer simplifié) ───────────────────────────
     private final List<Runnable> observateurs;
@@ -37,8 +39,8 @@ public class ModeleJeu {
     // ─── Mode de jeu ─────────────────────────────────────────────────────────
     /** Type des deux joueurs : HUMAIN ou IA (1/2/3) */
     public enum TypeJoueur { HUMAIN, IA_ALEATOIRE, IA_HEURISTIQUE, IA_MINIMAX }
-    private TypeJoueur typeJoueur1;
-    private TypeJoueur typeJoueur2;
+    public TypeJoueur typeJoueur1;
+    public TypeJoueur typeJoueur2;
 
     // ════════════════════════════════════════════════════════════════════════
     // Constructeur
@@ -57,6 +59,7 @@ public class ModeleJeu {
 
         this.historique  = new ArrayList<>();
         this.observateurs = new ArrayList<>();
+        this.historiqueEtat = new ArrayList<>();
         reinitialiser();
     }
 
@@ -78,6 +81,7 @@ public class ModeleJeu {
         this.gagnant      = 0;
         this.etat         = EtatPartie.EN_COURS;
         this.historique.clear();
+        this.historiqueEtat.clear();
         notifierObservateurs();
     }
 
@@ -97,7 +101,8 @@ public class ModeleJeu {
             notifierObservateurs();
             return true;
         }
-
+        ModeleJeu modelCopie = copier();
+        historiqueEtat.add(modelCopie.mangee);
         // Manger toutes les cases dans le rectangle (ligne..fin) x (colonne..fin)
         for (int l = ligne; l < lignes; l++) {
             for (int c = colonne; c < colonnes; c++) {
@@ -163,6 +168,7 @@ public class ModeleJeu {
         return copie;
     }
 
+
     // ════════════════════════════════════════════════════════════════════════
     // Pattern Observateur
     // ════════════════════════════════════════════════════════════════════════
@@ -217,5 +223,33 @@ public class ModeleJeu {
         this.etat         = EtatPartie.EN_COURS;
         this.historique.clear();
         notifierObservateurs();
+    }
+
+    public boolean annulerDernierCoup() {
+        if (historique.isEmpty()) return false;
+        
+        historique.remove(historique.size() - 1);
+        
+        if (historiqueEtat.isEmpty()) {
+            reinitialiser();
+            return true;
+        }
+        
+        boolean[][] etatPrecedent = historiqueEtat.remove(historiqueEtat.size() - 1);
+        for (int l = 0; l < lignes; l++) {
+            for (int c = 0; c < colonnes; c++) {
+                mangee[l][c] = etatPrecedent[l][c];
+            }
+        }
+        
+        joueurActuel = (joueurActuel == 1) ? 2 : 1;
+        
+        if (etat == EtatPartie.TERMINE) {
+            etat = EtatPartie.EN_COURS;
+            gagnant = 0;
+        }
+        
+        notifierObservateurs();
+        return true;
     }
 }
