@@ -1,0 +1,15 @@
+<!-- Folder / Dossier icon — 32×32 viewBox -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>Dossier</title>
+  <!-- Back panel -->
+  <rect x="1" y="9" width="30" height="21" rx="2.5" fill="#C89614"/>
+  <!-- Tab -->
+  <path d="M1 9 L1 5 Q1 3 3 3 L14 3 Q16 3 16 5 L16 9 Z" fill="#DCA820"/>
+  <!-- Front panel -->
+  <rect x="1" y="12" width="30" height="18" rx="2.5" fill="#F0BE32"/>
+  <!-- Lines inside -->
+  <line x1="5" y1="18" x2="27" y2="18" stroke="rgba(160,120,10,0.5)" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="5" y1="22" x2="22" y2="22" stroke="rgba(160,120,10,0.5)" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- Outline -->
+  <rect x="1" y="9" width="30" height="21" rx="2.5" fill="none" stroke="#9C7808" stroke-width="1"/>
+</svg>

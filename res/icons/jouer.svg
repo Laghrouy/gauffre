@@ -1,0 +1,6 @@
+<!-- Play / Jouer icon — 32×32 viewBox -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>Jouer</title>
+  <circle cx="16" cy="16" r="15" fill="#8c5a28" stroke="#B47840" stroke-width="1.2"/>
+  <polygon points="12,8 26,16 12,24" fill="white"/>
+</svg>

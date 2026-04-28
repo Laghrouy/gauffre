@@ -1,0 +1,25 @@
+<!-- Gaufre (waffle) icon — 32×32 viewBox -->
+<!-- 4×4 grid of golden rounded squares -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>Gaufre</title>
+  <!-- Row 1 -->
+  <rect x="0.5" y="0.5"  width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="8.5" y="0.5"  width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="16.5" y="0.5" width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="24.5" y="0.5" width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <!-- Row 2 -->
+  <rect x="0.5" y="8.5"  width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="8.5" y="8.5"  width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="16.5" y="8.5" width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="24.5" y="8.5" width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <!-- Row 3 -->
+  <rect x="0.5" y="16.5"  width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="8.5" y="16.5"  width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="16.5" y="16.5" width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="24.5" y="16.5" width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <!-- Row 4 -->
+  <rect x="0.5" y="24.5"  width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="8.5" y="24.5"  width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="16.5" y="24.5" width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+  <rect x="24.5" y="24.5" width="7" height="7" rx="1.5" fill="#FFC832" stroke="#C89614" stroke-width="0.6"/>
+</svg>

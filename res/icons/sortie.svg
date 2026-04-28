@@ -1,0 +1,17 @@
+<!-- Exit / Sortie icon (door + arrow) — 32×32 viewBox -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>Quitter</title>
+  <!-- Door frame -->
+  <rect x="1" y="2" width="18" height="28" rx="2" fill="#8c5a28"/>
+  <!-- Door inner panel -->
+  <rect x="3" y="4" width="14" height="24" rx="1.5" fill="#B47840"/>
+  <!-- Door knob -->
+  <circle cx="15" cy="16" r="2" fill="#E6B432"/>
+  <!-- Door outline -->
+  <rect x="1" y="2" width="18" height="28" rx="2" fill="none" stroke="#4E3010" stroke-width="1"/>
+  <!-- Arrow body -->
+  <line x1="21" y1="16" x2="30" y2="16" stroke="#C83232" stroke-width="2.8" stroke-linecap="round"/>
+  <!-- Arrowhead -->
+  <polyline points="26,11 31,16 26,21" fill="none" stroke="#C83232" stroke-width="2.8"
+            stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
